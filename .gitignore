@@ -1,0 +1,6 @@
+bin/
+dist/
+/corbelo-proxy
+.env
+.env.local
+.DS_Store

@@ -1,0 +1,14 @@
+services:
+  corbelo-proxy:
+    build: .
+    ports:
+      - "127.0.0.1:8317:8317"
+    environment:
+      CORBELO_PROXY_ADDR: "0.0.0.0:8317"
+      CORBELO_PROXY_UPSTREAM_URL: "${CORBELO_PROXY_UPSTREAM_URL:-http://host.docker.internal:11434/v1}"
+      CORBELO_PROXY_UPSTREAM_API_KEY: "${CORBELO_PROXY_UPSTREAM_API_KEY:-}"
+      CORBELO_PROXY_API_KEY: "${CORBELO_PROXY_API_KEY:-}"
+      CORBELO_PROXY_ALLOWED_ORIGINS: "${CORBELO_PROXY_ALLOWED_ORIGINS:-https://corbelo.app,https://studio.corbelo.app,http://localhost:3000,http://127.0.0.1:3000}"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
