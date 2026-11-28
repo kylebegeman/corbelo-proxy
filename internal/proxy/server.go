@@ -19,7 +19,8 @@ import (
 	"github.com/kylebegeman/corbelo-proxy/internal/config"
 )
 
-const Version = "0.1.0"
+// Version is stamped at build time via -ldflags when cutting a release.
+var Version = "0.1.0"
 
 // Server implements a lightweight, open-source, localhost-first OpenAI and
 // Anthropic-compatible AI proxy gateway with CORS + Private Network Access,

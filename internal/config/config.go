@@ -10,7 +10,7 @@ import (
 )
 
 // DefaultAllowedOrigins permits browser-direct connections from hosted Corbelo
-// Workbench origins and local development servers.
+// and Corbelo Studio origins and local development servers.
 var DefaultAllowedOrigins = []string{
 	"https://corbelo.app",
 	"https://studio.corbelo.app",
